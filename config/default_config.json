@@ -1,0 +1,65 @@
+{
+  "correlation": {
+    "window_seconds": 15,
+    "process_after_burst_seconds": 8,
+    "alert_cooldown_seconds": 5
+  },
+  "keystroke": {
+    "minimum_keys": 12,
+    "analysis_window_seconds": 2.0,
+    "burst_mean_interval_seconds": 0.12,
+    "very_fast_interval_seconds": 0.02,
+    "fast_interval_seconds": 0.05,
+    "moderate_interval_seconds": 0.08,
+    "low_variability_cv": 0.25,
+    "burst_event_cooldown_seconds": 2.0
+  },
+  "classification": {
+    "suspicious_threshold": 40,
+    "attack_threshold": 70
+  },
+  "process": {
+    "poll_interval_seconds": 0.5,
+    "suspicious_names": [
+      "cmd.exe",
+      "powershell.exe",
+      "pwsh.exe",
+      "wscript.exe",
+      "cscript.exe",
+      "mshta.exe",
+      "bash",
+      "sh",
+      "zsh",
+      "dash",
+      "python",
+      "python3",
+      "gnome-terminal-server",
+      "xterm",
+      "konsole"
+    ],
+    "record_command_line": false
+  },
+  "device": {
+    "poll_interval_seconds": 1.5
+  },
+  "responses": {
+    "desktop_notifications": true,
+    "terminate_process": false,
+    "termination_threshold": 85,
+    "termination_allowlist": [
+      "cmd.exe",
+      "notepad.exe",
+      "gedit",
+      "mousepad",
+      "xterm"
+    ],
+    "lock_session": false,
+    "lock_threshold": 95
+  },
+  "logging": {
+    "directory": "logs",
+    "raw_events_jsonl": "raw_events.jsonl",
+    "detections_jsonl": "detections.jsonl",
+    "detections_csv": "detections.csv"
+  }
+}
